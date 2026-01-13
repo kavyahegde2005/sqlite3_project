@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Offers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+{% include 'nav.html' %}
+
+<div class="offers-page">
+    <h1>Offers</h1>
+    <p class="subtitle">Promotions, deals and special offers for you</p>
+
+    {% for offer in offers %}
+    <div class="offer-box">
+        <div class="offer-text">
+            <span class="tag">{{ offer.tag }}</span>
+            <h2>{{ offer.title }}</h2>
+            <p>{{ offer.description }}</p>
+            <a href="/stays" class="offer-btn">Explore deals</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

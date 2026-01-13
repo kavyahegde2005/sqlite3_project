@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stays</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+{% include 'nav.html' %}
+
+<h2 class="page-title">Available Stays</h2>
+
+<div class="card-container">
+    {% for p in properties %}
+    <div class="card">
+        <img src="{{ p.image }}">
+        <h3>{{ p.name }}</h3>
+        <p>{{ p.city }} • {{ p.property_type }}</p>
+        <p class="price">₹{{ p.price_per_day }}/day</p>
+        <a href="/payment" class="btn">Book Now</a>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+{% include 'nav.html' %}
+
+<div class="success-container">
+    <h1>🎉 Booking Successful!</h1>
+
+    <p>Your booking has been confirmed successfully.</p>
+    <p>Thank you for choosing our service.</p>
+
+    <div class="success-actions">
+        <a href="/stays" class="btn-success">View Stays</a>
+        <a href="/" class="btn-secondary">Go to Home</a>
+    </div>
+</div>
+
+</body>
+</html>

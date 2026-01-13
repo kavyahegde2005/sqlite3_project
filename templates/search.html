@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+{% include 'nav.html' %}
+
+<h2 class="page-title">
+    Stays in "{{ city }}"
+</h2>
+
+<div class="card-container">
+    {% if properties %}
+        {% for p in properties %}
+        <div class="card">
+            <img src="{{ p.image }}">
+            <h3>{{ p.name }}</h3>
+            <p>{{ p.city }} • {{ p.property_type }}</p>
+            <p class="price">₹{{ p.price_per_day }}/day</p>
+            <a href="/payment" class="btn">Book Now</a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p style="font-size:18px;">No stays found 😔</p>
+    {% endif %}
+</div>
+
+</body>
+</html>

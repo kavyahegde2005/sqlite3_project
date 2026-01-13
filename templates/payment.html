@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+{% include 'nav.html' %}
+
+<div class="payment-container">
+    <h2>Payment Details</h2>
+
+    <form method="POST">
+        <label class="pay-option">
+            <input type="radio" name="payment_method" value="PhonePe" required>PhonePe</label>
+
+        <label class="pay-option">
+            <input type="radio" name="payment_method" value="GPay">Google Pay (GPay)</label>
+
+        <label class="pay-option">
+            <input type="radio" name="payment_method" value="COD">Cash</label>
+
+        <button type="submit">Confirm Payment</button>
+    </form>
+</div>
+
+
+</body>
+</html>
